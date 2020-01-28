@@ -11,7 +11,7 @@ namespace SMBTicketConsole
     {
         static void Main(string[] args)
         {
-            string file = "TextFile1.txt";
+            String file = "TextFile1.txt";
             string choice;
 
             Console.WriteLine("1) View an existing ticket");
@@ -23,17 +23,24 @@ namespace SMBTicketConsole
             {
                 if (File.Exists(file))
                 {
-                    int TicketID = 0;
-                    string summary;
+                    string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
                     StreamReader sr = new StreamReader(file);
                        while (!sr.EndOfStream)
                 {
-                    string line = sr.ReadLine();
-                        string[] arr = line.Split('|');
-                        Console.WriteLine("TicketID: {0}, Summary: {1}", arr[0], arr[1]);
-                        TicketID += arr[1]
+                        StreamWriter sw = new StreamWriter(file);
+                        sw.WriteLine(line1);
+                        sw.Close();
                 }
                 }
+                
+                //int TicketID = 0;
+
+                //    string line = sr.ReadLine();
+                //        string[] arr = line.Split('|');
+                //        Console.WriteLine("TicketID: {0}, Summary: {1}", arr[0], arr[1]);
+                //        TicketID += arr[1]
+
+                //string file = "TextFile.txt";
                 //update me
             }
         }
