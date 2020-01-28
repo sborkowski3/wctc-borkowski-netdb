@@ -25,13 +25,18 @@ namespace SMBTicketConsole
                 {
                     string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
                     StreamReader sr = new StreamReader(file);
-                       while (!sr.EndOfStream)
-                {
+                    while (!sr.EndOfStream)
+                    {
                         StreamWriter sw = new StreamWriter(file);
                         sw.WriteLine(line1);
                         sw.Close();
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("File does not exist");
                 }
+                
                 
                 //int TicketID = 0;
 
