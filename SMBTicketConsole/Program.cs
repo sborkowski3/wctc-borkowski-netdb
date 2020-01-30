@@ -42,7 +42,8 @@ namespace SMBTicketConsole
                     string line = sr.ReadLine();
                     string[] arr = line.Split('|');
                        Console.WriteLine("TicketID: {0}, Summary: {1}", arr[0], arr[1]);
-                       TicketID += arr[1];
+                       TicketID += arr[1] == " " ? 4 : arr[1] == " " ? 3;
+                    count += 1;
 
                //string file = "TextFile.txt";
                
