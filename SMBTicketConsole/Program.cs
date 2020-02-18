@@ -65,7 +65,7 @@ namespace SMBTicketConsoleRevise
             {
                 Console.Write("Enter ID: ");
                 var id = Console.ReadLine();
-                Console.Write("")
+                Console.Write("");
                 StreamWriter sw = new StreamWriter(file, append:true);
                 sw.WriteLine(id);
                 sw.Close();
