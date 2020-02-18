@@ -65,9 +65,35 @@ namespace SMBTicketConsoleRevise
             {
                 Console.Write("Enter ID: ");
                 var id = Console.ReadLine();
-                Console.Write("");
+
+                Console.Write("Enter Summary: ");
+                string sum = Console.ReadLine();
+
+                Console.Write("Enter Ticket Status: ");
+                string stat = Console.ReadLine();
+
+                Console.Write("Enter Priority number from 0-5: ");
+                String pri = Console.ReadLine();
+
+                Console.Write("Enter your name: ");
+                string name = Console.ReadLine();
+
+                Console.Write("Enter name assigned to this ticket: ");
+                string assign = Console.ReadLine();
+
+                Console.Write("Enter Y or N for watching: ");
+                string watch = Console.ReadLine();
+
                 StreamWriter sw = new StreamWriter(file, append:true);
                 sw.WriteLine(id);
+                sw.WriteLine(sum);
+                sw.WriteLine(stat);
+                sw.WriteLine(pri);
+                sw.WriteLine(name);
+                sw.WriteLine(assign);
+                sw.WriteLine(watch);
+
+
                 sw.Close();
 
                 //    int TicketID = 0;
