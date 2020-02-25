@@ -48,8 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Files\links.csv" />
+    <None Include="Files\movies.csv" />
+    <None Include="Files\ratings.csv" />
+    <None Include="Files\tags.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\README.txt" />
     <Content Include="Files\TextFile1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
