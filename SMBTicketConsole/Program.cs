@@ -8,6 +8,7 @@ using NLog;
 
 
 private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
 namespace MovieTicketRedo
 {
  
@@ -37,12 +38,13 @@ namespace MovieTicketRedo
                     StreamReader sr = new StreamReader(file);
                     for (int i = 0; i < MovieIds.Count; i++) {
                     Console.WriteLine($"MovieID: {MovieIds[i]}");
-                        Console.WriteLine($"Title: {MovieTitles[i]}");
-                        Console.WriteLine($"Genre: {MovieGenres[i]}");
-                        Console.WriteLine($"Year: {MovieYears[i]}");
-                        Console.WriteLine();
+                      Console.WriteLine($"Title: {MovieTitles[i]}");
+                     Console.WriteLine($"Genre: {MovieGenres[i]}");
+                    Console.WriteLine($"Year: {MovieYears[i]}");
+                    Console.WriteLine();
 
                     }
+                    
 while (!sr.EndOfStream)
                     {
                         var line = sr.ReadLine();
@@ -61,25 +63,27 @@ while (!sr.EndOfStream)
 
             if (choice == "2")
             {
-                Console.Write("Enter Movie ID: ");
-               var id = Console.ReadLine();
+                MovieTicket = new MovieTicket();
 
-                Console.Write("Enter Movie Title: ");
-               string title = Console.ReadLine();
+               // Console.Write("Enter Movie ID: ");
+              // var id = Console.ReadLine();
 
-                Console.Write("Enter Movie Genre: ");
-               string gen = Console.ReadLine();
+              //  Console.Write("Enter Movie Title: ");
+             //  string title = Console.ReadLine();
 
-                Console.Write("Enter Movie Year: ");
-                String year = Console.ReadLine();
+             //   Console.Write("Enter Movie Genre: ");
+             //  string gen = Console.ReadLine();
 
-                  StreamWriter sw = new StreamWriter(file, append:true);
-                sw.WriteLine(id);
-               sw.WriteLine(title);
-                sw.WriteLine(gen);
-               sw.WriteLine(year);
+             //   Console.Write("Enter Movie Year: ");
+             //   String year = Console.ReadLine();
+
+             //     StreamWriter sw = new StreamWriter(file, append:true);
+             //   sw.WriteLine(id);
+            //   sw.WriteLine(title);
+            //    sw.WriteLine(gen);
+            //   sw.WriteLine(year);
      
-                sw.Close();   
+             //   sw.Close();   
 
            }
 
