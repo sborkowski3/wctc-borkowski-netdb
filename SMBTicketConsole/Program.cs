@@ -4,114 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using NLog;
 
+
+private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 namespace MovieTicketRedo
 {
+ 
 
-    //class Ticket
-    //{
-    //    public Uint64 TicketId { get; set; }
-    //    public string info { get; set; }
-    //    public string Display()
-    //    {
-    //        return $"id{TicketId}\n Info:{info}/n";
+    static void Main(string[] args)
+    {
+            logger.Info("Program started");
 
-    //    }
-    //}
+       string file = "../../data/movies.txt";
 
+       
+            if (!File.Exists(file))
+            {
+                logger.Error("File does not exist: {File}", file);
 
-    //public class Uint64
-    //{
-    //}
+ 
 
-    //class Program
-    //{
+            Console.WriteLine("1) View an existing Movie");
+            Console.WriteLine("2) Create a new Movie");
+            Console.WriteLine("3) Enter any key to exit");
+           choice = Console.ReadLine();
 
+           if (choice == "1")
+           {
+                if (File.Exists(movies.txt))
+                {
+                    StreamReader sr = new StreamReader(file);
+                    for (int i = 0; i < MovieIds.Count; i++) {
+                    Console.WriteLine($"MovieID: {MovieIds[i]}");
+                        Console.WriteLine($"Title: {MovieTitles[i]}");
+                        Console.WriteLine($"Genre: {MovieGenres[i]}");
+                        Console.WriteLine($"Year: {MovieYears[i]}");
+                        Console.WriteLine();
 
-    //    static void Main(string[] args)
-    //    {
-    //        String file = Path.Combine(Environment.CurrentDirectory, "Files", "TextFile1.txt");
-    //        string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
-    //        string choice;
-    //        //string count;
-
-    //        Console.WriteLine("1) View an existing ticket");
-    //        Console.WriteLine("2) Create a new ticket");
-    //        Console.WriteLine("3) Enter any key to exit");
-    //        choice = Console.ReadLine();
-
-    //        if (choice == "1")
-    //        {
-    //            if (File.Exists(file))
-    //            {
-    //                StreamReader sr = new StreamReader(file);
-    //                while (!sr.EndOfStream)
-    //                {
-    //                    var line = sr.ReadLine();
-    //                    Console.WriteLine(line);
-    //                    //StreamWriter sw = new StreamWriter(file);
-    //                    //sw.WriteLine(line1);
-    //                }
-    //                sr.Close();
-    //            }
-    //            else
-    //            {
-    //                Console.WriteLine("File does not exist");
-    //            }
+                    }
+while (!sr.EndOfStream)
+                    {
+                        var line = sr.ReadLine();
+                        Console.WriteLine(line);
+                       
+                  }
+                sr.Close();
+                }
+                else
+                {
+                    Console.WriteLine("File does not exist");
+                }
 
 
-    //        }
+            }
 
-    //        if (choice == "2")
-    //        {
-    //            Console.Write("Enter ID: ");
-    //            var id = Console.ReadLine();
+            if (choice == "2")
+            {
+                Console.Write("Enter Movie ID: ");
+               var id = Console.ReadLine();
 
-    //            Console.Write("Enter Summary: ");
-    //            string sum = Console.ReadLine();
+                Console.Write("Enter Movie Title: ");
+               string title = Console.ReadLine();
 
-    //            Console.Write("Enter Ticket Status: ");
-    //            string stat = Console.ReadLine();
+                Console.Write("Enter Movie Genre: ");
+               string gen = Console.ReadLine();
 
-    //            Console.Write("Enter Priority number from 0-5: ");
-    //            String pri = Console.ReadLine();
+                Console.Write("Enter Movie Year: ");
+                String year = Console.ReadLine();
 
-    //            Console.Write("Enter your name: ");
-    //            string name = Console.ReadLine();
+                  StreamWriter sw = new StreamWriter(file, append:true);
+                sw.WriteLine(id);
+               sw.WriteLine(title);
+                sw.WriteLine(gen);
+               sw.WriteLine(year);
+     
+                sw.Close();   
 
-    //            Console.Write("Enter name assigned to this ticket: ");
-    //            string assign = Console.ReadLine();
+           }
 
-    //            Console.Write("Enter Y or N for watching: ");
-    //            string watch = Console.ReadLine();
-
-    //            StreamWriter sw = new StreamWriter(file, append:true);
-    //            sw.WriteLine(id);
-    //            sw.WriteLine(sum);
-    //            sw.WriteLine(stat);
-    //            sw.WriteLine(pri);
-    //            sw.WriteLine(name);
-    //            sw.WriteLine(assign);
-    //            sw.WriteLine(watch);
-
-
-    //            sw.Close();
-
-    //            //    int TicketID = 0;
-    //            //    string line = Console.ReadLine();
-    //            //    string[] arr = line.Split('|');
-    //            //    Console.WriteLine("TicketID: {0}, Summary: {1}", arr[0], arr[1]);
-    //            //TicketID += arr[0] == " " ? 4 : arr[1] == " " ? 3;
-    //            //count += 1;
-
-    //            //string file = "TextFile.txt";
-
-    //        }
-
-    //        if (choice == "3")
-    //        {
-    //            Console.ReadLine();
-    //        }
-    //    }
-    //}
+           if (choice == "3")
+           {
+               Console.ReadLine();
+           }
+    logger.Info("Program ended");
+        }
+    }
 }
