@@ -2,6 +2,7 @@
 Summary:
 Status:
 Priority:
-Submitter: 
+Submitter:
 Assigned:
 Watching:
+Severity:

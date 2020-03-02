@@ -11,12 +11,12 @@ namespace SMBTicketConsole
     {
         static void Main(string[] args)
         {
-            string file = "../../data/movies.txt";
+            string file = "../../data/Bug_Defect.txt";
             //string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
             string choice;
 
             Console.WriteLine("1) View an existing ticket");
-            Console.WriteLine("2) Create a new ticket");
+            Console.WriteLine("2) Create a new Bug and Defect ticket");
             Console.WriteLine("3) Enter any key to exit");
             choice = Console.ReadLine();
 
@@ -40,7 +40,7 @@ namespace SMBTicketConsole
                
                
                 if (choice == "2"){
-                    Ticket = new Ticket();
+                    Bug_Defect = new Bug_Defect();
 }
                 else
                 {
