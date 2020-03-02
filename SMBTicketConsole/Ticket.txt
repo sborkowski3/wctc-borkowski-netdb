@@ -5,4 +5,13 @@ Priority:
 Submitter:
 Assigned:
 Watching:
+
 Severity:
+
+Software:
+Cost:
+Reason:
+Estimate: 
+
+ProjectName: 
+DueDate:

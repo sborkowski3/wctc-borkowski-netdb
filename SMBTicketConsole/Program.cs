@@ -11,13 +11,14 @@ namespace SMBTicketConsole
     {
         static void Main(string[] args)
         {
-            string file = "../../data/Bug_Defect.txt";
-            //string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
+            string file = "../../data/Ticket.txt";
             string choice;
 
             Console.WriteLine("1) View an existing ticket");
             Console.WriteLine("2) Create a new Bug and Defect ticket");
-            Console.WriteLine("3) Enter any key to exit");
+            Console.WriteLine("3) Create a new Enhancement ticket");
+            Console.WriteLine("4) Create a new Task Ticket");
+            Console.WriteLine("5) Enter any key to exit");
             choice = Console.ReadLine();
 
             if (choice == "1")
@@ -36,19 +37,18 @@ namespace SMBTicketConsole
                 {
                     Console.WriteLine("File does not exist");
                 }
-                      
-               
-               
+                     
+                              
                 if (choice == "2"){
                     Bug_Defect = new Bug_Defect();
-}
-                else
-                {
-                    Console.WriteLine("File does not exist");
                 }
-                
-
-            if (choice == 3){
+                if (choice == "3"){
+                 Enhancement = new Enhancement();
+                }
+                if (choice == "4"){
+                    Task = new Task();
+                }
+            if (choice == "5"){
                 Console.ReadLine();
                 }
             }
