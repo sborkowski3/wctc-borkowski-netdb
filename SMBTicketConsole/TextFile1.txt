@@ -1,2 +1,7 @@
-﻿TicketID, Summary, Status, Priority, Submitter, Assigned, Watching
-1, This is a bug Ticket, Open, High
+﻿TicketID:
+Summary:
+Status:
+Priority:
+Submitter: 
+Assigned:
+Watching:

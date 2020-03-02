@@ -11,8 +11,8 @@ namespace SMBTicketConsole
     {
         static void Main(string[] args)
         {
-            String file = "TextFile1.txt";
-            string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
+            string file = "../../data/movies.txt";
+            //string line1 = "TicketID, Summary, Status, Priority, Submitter, Assigned, Watching";
             string choice;
 
             Console.WriteLine("1) View an existing ticket");
@@ -36,18 +36,13 @@ namespace SMBTicketConsole
                 {
                     Console.WriteLine("File does not exist");
                 }
-                
-                if (choice == "2"){
-                int TicketID = 0;
-                    string line = sr.ReadLine();
-                    string[] arr = line.Split('|');
-                       Console.WriteLine("TicketID: {0}, Summary: {1}", arr[0], arr[1]);
-                       TicketID += arr[1] == " " ? 4 : arr[1] == " " ? 3;
-                    count += 1;
-
-               //string file = "TextFile.txt";
+                      
                
-                }else
+               
+                if (choice == "2"){
+                    Ticket = new Ticket();
+}
+                else
                 {
                     Console.WriteLine("File does not exist");
                 }
